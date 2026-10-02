@@ -16,7 +16,11 @@ intents = discord.Intents.default()
 intents.dm_messages = True
 intents.message_content = True
 client = discord.Client(intents=intents)
-tree=app_commands.CommandTree(client)
+tree=app_commands.CommandTree(
+    client,
+    allowed_contexts=app_commands.AppCommandContext(guild=True,dm_channel=True,private_channel=True),
+    allowed_installs=app_commands.AppInstallationType(guild=True,user=True),
+)
 
 def owner_only():
     async def check(interaction):
@@ -41,7 +45,7 @@ def safe_calc(expression):
 
 @client.event
 async def on_ready():
-    await tree.sync()
+    await tree.sync()  # Global sync, no guild argument
     print(f"Logged in as {client.user} (ID: {client.user.id})")
     print("Commands synced globally.")
 
