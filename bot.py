@@ -12,7 +12,7 @@ LTC_ADDRESS="ltc1qgtam35vt6cu7qpaha5r9g6m5c9lua0kzqngzqd"
 if not DISCORD_TOKEN:
     raise RuntimeError("DISCORD_TOKEN is missing.")
 
-client=discord.Client(intents=discord.Intents.default())
+client=discord.Client(intents=discord.Intents.all())
 tree=app_commands.CommandTree(client)
 
 def owner_only():
