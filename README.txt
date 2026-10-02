@@ -1,0 +1,1 @@
+Clean private Discord bot. Commands: /calculate, /upi, /ltc. All owner-only. Owner ID: 1311295859325145159. For DMs: Discord Developer Portal > Installation > enable User Install > applications.commands > install the app to your account. Do not upload .env or your token to GitHub.
